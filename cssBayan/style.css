@@ -1,0 +1,136 @@
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 0.5em;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 2em;
+    background: #CFD2CF;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #969796;
+}
+
+/* Styles */
+body {
+    margin: 0;
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #EEEEEE;
+}
+
+h1 {
+    font-size: 3em;
+    font-weight: 800;
+}
+
+label {
+    cursor: pointer;
+}
+
+.container {
+    max-width: 70em;
+    margin: 0 auto;
+    padding: 0 1em;
+}
+
+.main__mem-content {
+    text-align: center;
+    color: #4141EB;
+    border-top: .05em solid #C8C1C1;
+}
+
+.main__mem-img {
+    height: 100%;
+    object-fit: cover;
+    transition: .5s;
+}
+
+.main__mem-img:hover {
+    opacity: .6;
+}
+
+.main__mem-img:active {
+    opacity: .6;
+    scale: 1.05;
+}
+
+.main__cross {
+    width: 1.5em;
+    height: 1.5em;
+    transform: rotate(45deg);
+    transition: .5s;
+    opacity: 0;
+}
+
+.main__mem-title span {
+    font-size: 1.5em;
+}
+
+.main__mem-img-wrapper {
+    display: block;
+    height: 0em;
+    transition: .5s;
+}
+
+.main__mem-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5em 0;
+
+    font-weight: 600;
+    transition: .5s;
+}
+
+.input-check:checked~.main__mem-img-wrapper {
+    height: 20em;
+    margin: 1em 0;
+}
+
+.input-check:checked~.main__mem-title .main__cross {
+    transform: rotate(0deg);
+}
+
+.input-check:checked~.main__mem-title {
+    color: #000;
+}
+
+/* Media */
+@media (hover: hover) {
+    .main__mem-content:hover .main__mem-img-wrapper {
+        height: 20em;
+        margin: 1em 0;
+    }
+
+    .container:hover .main__cross {
+        opacity: 1;
+    }
+
+    .container:hover .main__mem-title {
+        color: #000;
+        transition: .5s;
+    }
+
+    .main__mem-content:hover .main__cross {
+        transform: rotate(0deg);
+    }
+}
+
+@media (max-width: 1920px) {
+    body {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 820px) {
+    body {
+        font-size: .7em;
+    }
+}
+
+@media (max-width: 320px) {
+    body {
+        font-size: .5em;
+    }
+}
